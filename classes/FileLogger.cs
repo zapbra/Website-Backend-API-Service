@@ -6,9 +6,9 @@ namespace WebApplication1.classes
 
         public bool WriteToFile(string message)
         {
-            string logFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), "logs");
+            string logFolderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs");
 
-            string date = DateTime.Now.ToString("MMMM d, yyyy");
+            string date = DateTime.Now.ToString("MMMM d, yyyy h:mm tt");
             string dateYearMonth = DateTime.Now.ToString("MM_yyyy");
             string filePath = dateYearMonth + "_log.txt";
 

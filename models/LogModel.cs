@@ -2,7 +2,7 @@
 {
     public class LogModel
     {
-        public string pagePath { get; set; }
+        public string PagePath { get; set; }
         public string Message { get; set; }
     }
 }

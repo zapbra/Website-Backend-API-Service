@@ -16,16 +16,16 @@ namespace WebApplication1.Controllers
         {
 
 
-            if (log == null || string.IsNullOrEmpty(log.pagePath) || string.IsNullOrEmpty(log.Message))
+            if (log == null || string.IsNullOrEmpty(log.PagePath) || string.IsNullOrEmpty(log.Message))
             {
                 return BadRequest("Invalid log data");
             }
 
-            bool logResult = fileLogger.WriteToFile($"Page: {log.pagePath}, Message: {log.Message}");
+            bool logResult = fileLogger.WriteToFile($"Page: {log.PagePath}, Message: {log.Message}");
 
             if (logResult)
             {
-                return Ok("Log successfully written");
+                return Ok(new { Message = "Log successfully written" });
             }
             else
             {
@@ -36,7 +36,7 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Successfully reached logger api");
+            return Ok(new { Message = "Successfully reached logger api" });
 
         }
     }
